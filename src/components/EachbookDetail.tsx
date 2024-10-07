@@ -2,20 +2,33 @@ import SearchBox from "./SearchBox";
 import { Booklist } from "../constant/Booklist";
 import { useParams, useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import img from "../assets/man.jpeg"
+import img from "../assets/man.jpeg";
+import ButtonComponent from "./button";
 
 const EachbookDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const book = Booklist.filter((item) => item.id === Number(id));
-  console.log(book[0]);
+
+  const handlebtn = (vlaue: number | undefined) => {
+    console.log(vlaue);
+  };
+
+  const handlBackbtn = (value: number | undefined) => {
+    console.log(value);
+    navigate("/home");
+  };
+
   return (
     <div className="bg-[#F3F3F7] w-5/6 p-5 flex flex-col gap-10">
       <SearchBox />
-      <button onClick={() => navigate("/home")} className=" text-left w-fit ">
-        <Icon icon="ep:back" className="inline mr-2" />
-        <span> Back to result</span>
-      </button>
+
+      <ButtonComponent
+        onClick={handlBackbtn}
+        label="←  Back to result"
+        className="text-left w-fit"
+      />
+
       <div className="flex justify-between">
         <div className="flex gap-16 w-4/6 ">
           <div className="bg-white max-w-[20rem] flex rounded-xl  h-full flex-col justify-center items-center gap-4 p-4 px-8 shadow-md">
@@ -111,12 +124,18 @@ const EachbookDetail = () => {
               </div>
             </div>
             <div>
-              <button className="uppercase    py-4 px-16 border-none bg-[#F27851] text-white text-lg font-medium">
-                borrow
-              </button>
-              <button className="uppercase  ml-10  py-4 px-16 border-none bg-green-500 text-white text-lg font-medium">
-                read now
-              </button>
+              <ButtonComponent
+                label="borrow"
+                className="uppercase  py-4 px-16 border-none bg-[#F27851] text-white text-lg font-medium"
+                onClick={handlebtn}
+                value={5}
+              />
+              <ButtonComponent
+                label=" read now"
+                className="uppercase  ml-10  py-4 px-16 border-none bg-green-500 text-white text-lg font-medium"
+                onClick={handlebtn}
+                value={5}
+              />
             </div>
           </div>
         </div>
@@ -131,11 +150,11 @@ const EachbookDetail = () => {
             </figure>
           </p>
           <p className="text-[14px]">
-          <span>{book[0].author}</span> is a usability consultant who has more than 30 years of
-            experience as a user advocate for companies like Apple, Netscape,
-            AOL, Lexus, and others. Based in part on the success of his first
-            book, Don't Make Me Think, he has become a highly sought-after
-            speaker on usability design.
+            <span>{book[0].author}</span> is a usability consultant who has more
+            than 30 years of experience as a user advocate for companies like
+            Apple, Netscape, AOL, Lexus, and others. Based in part on the
+            success of his first book, Don't Make Me Think, he has become a
+            highly sought-after speaker on usability design.
           </p>
           <div className="flex flex-col gap-2">
             <p className="font-medium">Other Book</p>

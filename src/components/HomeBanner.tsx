@@ -12,9 +12,9 @@ const HomeBanner: React.FC = () => {
           <cite className="text-left    ">-Wait Disney</cite>
         </blockquote>
         <div className="flex gap-4">
-          <p className="border-white  border-1   p-1 bg-white rounded-full " />
+          <p className="border-white  border-1 cursor-pointer  p-1 bg-white rounded-full " />
           {Array(3).fill(
-            <p className="border-white  border-1  p-1 bg-gray-700 rounded-full " />
+            <p className="border-white  border-1 cursor-pointer p-1 bg-gray-700 rounded-full " />
           )}
         </div>
       </div>

@@ -6,5 +6,5 @@ type ListProps<T> = {
 };
 
 export function ListComponent<T>({ items, renderItem }: ListProps<T>) {
-  return <ul>{items.map(renderItem)}</ul>;
+  return <ul className="flex flex-col gap-4">{items.map(renderItem)}</ul>;
 }

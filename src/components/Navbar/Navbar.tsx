@@ -1,5 +1,4 @@
 import img from "../../assets/logo.png";
-import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import { NavItem, NavListProps } from "../Navlist/NavList";
 import { ListComponent } from "../Navlist/NavListItem";
@@ -41,9 +40,9 @@ const Navbar = () => {
         <ListComponent
           items={NavData}
           renderItem={(item) => (
-            <li key={item.id}>
+            <li key={item.id} className="flex items-center  gap-2">
               <NavItem
-                // id={item.id}
+                id={item.id}
                 iconText={item.iconText}
                 label={item.label}
                 IconClass={item.IconClass}
@@ -52,23 +51,6 @@ const Navbar = () => {
             </li>
           )}
         />
-
-        <ul className="flex flex-col gap-4">
-          <li className="flex items-center  gap-2">
-            <Icon icon="mdi:home" className="h-6 w-6" />
-            <a href="" className="font-medium">
-              Home
-            </a>
-          </li>
-          <li className="flex items-center  gap-2">
-            <Icon icon="ion:search" className="h-6 w-6" />
-            <a href="">Search</a>
-          </li>
-          <li className="flex items-center  gap-2">
-            <Icon icon="mingcute:book-5-line" className="h-6 w-6" />
-            <a href="">My Shelf</a>
-          </li>
-        </ul>
       </div>
       <div className="text-gray-400">
         <ul>

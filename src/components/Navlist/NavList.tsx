@@ -14,10 +14,12 @@ export function NavItem({
   IconClass,
   LinkClass,
 }: NavListProps) {
-  <div>
-    <Icon icon={iconText} className={IconClass} />
-    <a href="" className={LinkClass}>
-      {label}
-    </a>
-  </div>;
+  return (
+    <>
+      <Icon icon={iconText} className={IconClass} />
+      <a href="" className={LinkClass}>
+        {label}
+      </a>
+    </>
+  );
 }

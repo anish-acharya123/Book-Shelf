@@ -3,7 +3,7 @@ import { Booklist } from "../constant/Booklist";
 import { useParams, useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import img from "../assets/man.jpeg";
-import ButtonComponent from "./button";
+import ButtonComponent from "./Button/Button";
 
 const EachbookDetail = () => {
   const navigate = useNavigate();

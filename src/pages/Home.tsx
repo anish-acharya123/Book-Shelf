@@ -1,5 +1,5 @@
 import BookList from "../components/BookList";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 
 const Home: React.FC = () => {
   return (

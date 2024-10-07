@@ -2,10 +2,10 @@ import { Icon } from "@iconify/react";
 
 export type NavListProps = {
   id: number;
-  iconText: string;
+  iconText?: string;
   label: string;
-  IconClass: string;
-  LinkClass: string;
+  IconClass?: string;
+  LinkClass?: string;
 };
 
 export function NavItem({
@@ -16,7 +16,7 @@ export function NavItem({
 }: NavListProps) {
   return (
     <>
-      <Icon icon={iconText} className={IconClass} />
+      <Icon icon={iconText || ""} className={IconClass} />
       <a href="" className={LinkClass}>
         {label}
       </a>

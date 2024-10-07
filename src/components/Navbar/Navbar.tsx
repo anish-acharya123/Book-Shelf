@@ -28,6 +28,11 @@ const Navbar = () => {
     },
   ];
 
+  const FooterData: NavListProps[] = [
+    { id: 1, label: "About" },
+    { id: 2, label: "Support" },
+    { id: 3, label: "Terms and Condition" },
+  ];
   return (
     <nav className=" w-1/6 p-5 flex flex-col justify-between items-center">
       <div className="flex flex-col gap-20 justify-center items-start">
@@ -52,18 +57,16 @@ const Navbar = () => {
           )}
         />
       </div>
+
       <div className="text-gray-400">
-        <ul>
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">Support</a>
-          </li>
-          <li>
-            <a href="">Terms & Condition</a>
-          </li>
-        </ul>
+        <ListComponent
+          items={FooterData}
+          renderItem={(item) => (
+            <li key={item.id}>
+              <NavItem id={item.id} label={item.label} />
+            </li>
+          )}
+        />
       </div>
     </nav>
   );

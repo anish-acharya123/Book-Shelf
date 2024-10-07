@@ -6,7 +6,9 @@ import book5 from "../assets/book5.jpeg";
 import book6 from "../assets/book6.jpeg";
 import book7 from "../assets/book7.jpeg";
 
-export const Booklist = [
+import { Book } from "../types";
+
+export const Booklist: Book[] = [
   {
     id: 1,
     img: book1,

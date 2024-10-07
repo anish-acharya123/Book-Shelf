@@ -1,12 +1,18 @@
-import { Booklist } from "../constant/Booklist";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { Book } from "../types";
 
-const BooksRender = () => {
+interface RecommendBookProps {
+  Booklist: Book[];
+}
+
+const BooksRender: FC<RecommendBookProps> = ({ Booklist }) => {
   const navigate = useNavigate();
   return (
     <div className=" flex justify-between items-center">
-      {Booklist.map((book) => (
+      {Booklist?.map((book) => (
         <div
+          key={book.id}
           onClick={() => navigate(`/book/${book.id}`)}
           className="bg-white rounded-lg gap-1 text-sm text-start flex flex-col justify- py-2 px-4 cursor-pointer shadow-md items-center"
         >

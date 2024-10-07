@@ -1,14 +1,25 @@
 import { Icon } from "@iconify/react";
 import img from "../assets/logo.png";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { LoginFormValues } from "../types";
 
-const Login = () => {
+const Login = <T extends LoginFormValues>() => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState<T>({
+    email: "",
+    password: "",
+  } as T);
   const [error, setError] = useState("");
 
+  const handlechange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(formData);
   const handleSubmitClick = (e: any) => {
     e.preventDefault();
 
@@ -18,15 +29,13 @@ const Login = () => {
       return re.test(String(email).toLowerCase());
     };
 
-    if (!validateEmail(email)) {
+    if (!validateEmail(formData.email)) {
       setError("Invalid Email");
+    } else if (formData.password.length < 5) {
+      setError("Password must be at least 5 chars long");
+    } else {
+      navigate("/home");
     }
-
-    if (password.length < 8) {
-      setError("Password must be at least 8 chars long");
-    }
-
-    navigate("/home");
   };
 
   return (
@@ -58,8 +67,8 @@ const Login = () => {
                 id="email"
                 className="w-full py-2 px-4 border-2 "
                 placeholder="username@collegename.ac.in"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={handlechange}
               />
             </p>
             <p className="w-full">
@@ -74,8 +83,8 @@ const Login = () => {
                   id="password"
                   placeholder="........."
                   className="py-2  outline-none"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={formData.password}
+                  onChange={handlechange}
                 />
                 <Icon icon="mdi:eye-off" className="cursor-pointer" />
               </p>

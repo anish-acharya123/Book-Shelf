@@ -3,7 +3,6 @@ import img from "../assets/logo.png";
 import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginFormValues } from "../types";
-import ButtonComponent from "../components/Button/Button";
 
 const Login = <T extends LoginFormValues>() => {
   const navigate = useNavigate();

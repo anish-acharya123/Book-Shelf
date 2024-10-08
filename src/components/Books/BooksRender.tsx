@@ -12,7 +12,7 @@ const BooksRender = ({ Booklist }: { Booklist: Book[] }) => {
       className="bg-white rounded-lg gap-1 text-sm text-start flex flex-col py-2 px-4 cursor-pointer shadow-md items-center"
     >
       <figure>
-        <img src={book.img} alt="img" className="h-44 w-40 rounded-lg" />
+        <img src={book.img} alt="img" className="h-52 w-40 rounded-lg" />
       </figure>
       <p className="w-full font-medium">{book.name}</p>
       <p className="w-full">

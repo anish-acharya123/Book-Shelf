@@ -3,6 +3,7 @@ import { Booklist } from "../../constant/Booklist";
 import { tableHeading } from "../../constant/Tableinfo";
 import { Icon } from "@iconify/react";
 import ButtonComponent from "../Button/Button";
+import { TableTh, TableTR } from "./TableElements";
 
 const SearchPage: React.FC = () => {
   const navigate = useNavigate();
@@ -18,13 +19,16 @@ const SearchPage: React.FC = () => {
     <div className="overflow-y-scroll h-[75vh] no-scrollbar ">
       <table className=" w-full  border-collapse">
         <thead>
-          <tr className="font-medium ">
-            {tableHeading.map((item) => (
-              <th className="text-start py-2" key={item.id}>
-                {item.label}
-              </th>
-            ))}
-          </tr>
+          <TableTR
+            items={tableHeading}
+            renderItem={(item) => (
+              <TableTh
+                label={item.label}
+                id={item.id}
+                className="text-start py-2"
+              />
+            )}
+          />
         </thead>
         <tbody className="space-y-4">
           {Booklist.map((item) => (

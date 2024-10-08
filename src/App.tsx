@@ -10,15 +10,34 @@ import SearchPage from "./components/SearchPage/SearchPage";
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/book/:id" element={<Detailpage />} />
-          <Route path="/search" element={<SearchPage />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/home"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path="/book/:id"
+          element={
+            <Layout>
+              <Detailpage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <Layout>
+              <SearchPage />
+            </Layout>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -20,16 +20,14 @@ const EachbookDetail = () => {
   };
 
   return (
-    <div className="bg-[#F3F3F7] w-5/6 p-5 flex flex-col gap-10">
-      <SearchBox />
-
+    <>
       <ButtonComponent
         onClick={handlBackbtn}
         label="←  Back to result"
         className="text-left w-fit"
       />
 
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-4">
         <div className="flex gap-16 w-4/6 ">
           <div className="bg-white max-w-[20rem] flex rounded-xl  h-full flex-col justify-center items-center gap-4 p-4 px-8 shadow-md">
             <figure>
@@ -169,7 +167,7 @@ const EachbookDetail = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

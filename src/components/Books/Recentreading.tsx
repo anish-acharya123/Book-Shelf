@@ -1,5 +1,5 @@
-import BooksRender from "./Books/BooksRender";
-import { Booklist } from "../constant/Booklist";
+import BooksRender from "./BooksRender";
+import { Booklist } from "../../constant/Booklist";
 
 const Recentreading = () => {
   return (

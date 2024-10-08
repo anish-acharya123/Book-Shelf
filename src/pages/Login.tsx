@@ -42,7 +42,7 @@ const Login = <T extends LoginFormValues>() => {
 
   setTimeout(() => {
     setIntro(false);
-  }, 5000);
+  }, 1200);
 
   if (intro) {
     return <Homeintro />;

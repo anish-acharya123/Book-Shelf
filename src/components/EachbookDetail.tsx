@@ -1,4 +1,3 @@
-import SearchBox from "./SearchBox";
 import { Booklist } from "../constant/Booklist";
 import { useParams, useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";

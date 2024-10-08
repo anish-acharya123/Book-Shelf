@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 export type NavListProps = {
   id: number;
@@ -17,9 +18,9 @@ export function NavItem({
   return (
     <>
       <Icon icon={iconText || ""} className={IconClass} />
-      <a href="" className={LinkClass}>
+      <Link to={"/home"} className={LinkClass}>
         {label}
-      </a>
+      </Link>
     </>
   );
 }

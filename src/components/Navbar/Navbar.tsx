@@ -43,6 +43,7 @@ const Navbar = () => {
         </figure>
 
         <ListComponent
+          className="flex flex-col gap-4"
           items={NavData}
           renderItem={(item) => (
             <li key={item.id} className="flex items-center  gap-2">
@@ -60,6 +61,7 @@ const Navbar = () => {
 
       <div className="text-gray-400">
         <ListComponent
+          className="flex flex-col gap-4"
           items={FooterData}
           renderItem={(item) => (
             <li key={item.id}>

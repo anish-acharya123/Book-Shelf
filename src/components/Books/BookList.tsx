@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Recentreading from "./Recentreading";
-import RecommendBook from "./RecommendBook";
-import SearchBox from "./SearchBox";
-import HomeBanner from "./HomeBanner";
+import Recentreading from "../Recentreading";
+import RecommendBook from "../RecommendBook";
+import SearchBox from "../SearchBox";
+import HomeBanner from "../HomeBanner";
 
 const BookList: FC = () => {
   return (

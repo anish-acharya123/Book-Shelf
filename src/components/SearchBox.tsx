@@ -1,6 +1,20 @@
 import { Icon } from "@iconify/react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchBox = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
+  const handleClick = () => {
+    console.log("click");
+    if (search.length > 0) {
+      navigate(`/search/?search=${search}`);
+    }
+  };
+
+  console.log(search);
+
   return (
     <div className="flex justify-center items-center text-lg gap-6">
       <p className=" px-4 border-2 rounded-full w-6/7  w-full flex justify-center items-center  gap-4">
@@ -12,8 +26,10 @@ const SearchBox = () => {
           type="search"
           className="w-full h-full outline-none text-lg py-2 px-4"
           placeholder="Search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
-        <button>
+        <button onClick={handleClick}>
           <Icon icon="iconamoon:search-bold" />
         </button>
       </p>

@@ -3,9 +3,11 @@ import img from "../assets/logo.png";
 import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginFormValues } from "../types";
+import Homeintro from "./Homeintro";
 
 const Login = <T extends LoginFormValues>() => {
   const navigate = useNavigate();
+  const [intro, setIntro] = useState<boolean>(true);
   const [formData, setFormData] = useState<T>({
     email: "",
     password: "",
@@ -37,6 +39,14 @@ const Login = <T extends LoginFormValues>() => {
       navigate("/home");
     }
   };
+
+  setTimeout(() => {
+    setIntro(false);
+  }, 5000);
+
+  if (intro) {
+    return <Homeintro />;
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen ">

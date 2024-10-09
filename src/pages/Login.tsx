@@ -49,8 +49,8 @@ const Login = <T extends LoginFormValues>() => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen ">
-      <div className="bg-white px-16 pt-10 pb-44 shadow-2xl   rounded-lg border-2 flex  flex-col justify-start  items-center gap-10 text-center">
+    <div className="flex justify-center items-center min-h-screen md:py-0 py-10 ">
+      <div className="bg-white sm:px-16  px-10 py-10  md:pb-44 pb-10 shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-lg   rounded-lg border-2 flex  flex-col justify-start  items-center gap-10 text-center">
         <figure>
           <img src={img} alt="login" className="h-20 w-32" />
         </figure>
@@ -60,10 +60,10 @@ const Login = <T extends LoginFormValues>() => {
             Sign in to continue to yourDigital Library
           </p>
         </div>
-        <div className="flex flex-col gap-4 min-w-[23rem]">
+        <div className="flex flex-col md:gap-4 w-full ">
           <form
             action=""
-            className="flex  flex-col  justify-between items-center text-start w-full gap-4"
+            className="flex  flex-col  justify-between items-center text-start  gap-4"
             onSubmit={handleSubmitClick}
           >
             <p className="w-full">
@@ -99,7 +99,7 @@ const Login = <T extends LoginFormValues>() => {
                 <Icon icon="mdi:eye-off" className="cursor-pointer" />
               </p>
             </p>
-            <div className="flex justify-between  w-full">
+            <div className="flex justify-between text-sm w-full">
               <p>
                 <input
                   type="checkbox"
@@ -127,7 +127,7 @@ const Login = <T extends LoginFormValues>() => {
             </button>
           </form>
         </div>
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full text-sm">
           <p className="text-sm">
             <span>New User?</span>{" "}
             <Link to="/signup" className="underline">

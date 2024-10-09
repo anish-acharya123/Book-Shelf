@@ -1,8 +1,8 @@
 import { Booklist } from "../constant/Booklist";
 const HomeBanner: React.FC = () => {
   return (
-    <div className="flex gap-6">
-      <div className="w-2/5 bg-[#FA7C54E5]  p-8 text-white rounded-lg flex flex-col gap-2">
+    <div className="flex gap-6 lg:flex-row flex-col">
+      <div className="lg:w-2/5 bg-[#FA7C54E5]  p-8 text-white rounded-lg flex flex-col gap-2">
         <h3 className="text-2xl">Today's Quoote</h3>
         <blockquote className="flex flex-col items-end">
           <p className="text-lg">
@@ -18,7 +18,7 @@ const HomeBanner: React.FC = () => {
           )}
         </div>
       </div>
-      <div className="w-3/5  flex gap-4 rounded-lg  overflow-hidden border-2 border-[#FA7C54E5]">
+      <div className="lg:w-3/5  flex gap-4 rounded-lg  overflow-hidden border-2 border-[#FA7C54E5]">
         <div className="text-white bg-[#FA7C54E5] h-full w-1/12 text-center flex justify-center">
           <span className="text-rotate text-2xl">New Arrivals</span>
         </div>

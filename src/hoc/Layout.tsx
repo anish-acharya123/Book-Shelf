@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="py-10 min-h-screen flex">
           <div className="flex w-full shadow-2xl rounded-md border-2 h-[91vh] ">
             <Navbar />
-            <div className="bg-[#F3F3F7] w-5/6 p-5 flex flex-col gap-10 h-full">
+            <div className="bg-[#F3F3F7] lg:w-5/6 p-5 flex flex-col gap-10 h-full">
               <SearchBox /> <div className="overflow-hidden">{children}</div>
             </div>
           </div>

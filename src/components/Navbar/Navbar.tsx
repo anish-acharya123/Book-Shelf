@@ -34,7 +34,7 @@ const Navbar = () => {
     { id: 3, label: "Terms and Condition" },
   ];
   return (
-    <nav className=" w-1/6 p-5 flex flex-col justify-between items-center">
+    <nav className=" lg:w-1/6 p-5  flex-col justify-between items-center lg:flex hidden">
       <div className="flex flex-col gap-20 justify-center items-start">
         <figure>
           <Link to="/">

@@ -27,7 +27,7 @@ const BooksRender = ({ Booklist }: { Booklist: Book[] }) => {
 
   return (
     <ListComponent
-      className="grid 2xl:grid-cols-7 lg:grid-cols-6 md:grid-cols-5 sm:grid-cols-4 grid-cols-2   - gap-4"
+      className="grid 2xl:grid-cols-7 lg:grid-cols-6 md:grid-cols-5 sm:grid-cols-4 grid-cols-2 gap-4"
       items={Booklist}
       renderItem={renderBookItem}
     />

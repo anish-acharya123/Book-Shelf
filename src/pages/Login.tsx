@@ -21,7 +21,6 @@ const Login = <T extends LoginFormValues>() => {
     });
   };
 
-  console.log(formData);
   const handleSubmitClick = (e: any) => {
     e.preventDefault();
 
